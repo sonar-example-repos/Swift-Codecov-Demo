@@ -29,3 +29,9 @@ jobs:
           args: >
             -Dsonar.swift.coverage.reportPaths=sonarqube-generic-coverage.xml
             -X
+      - name: ⬆️ Upload SonarQube Coverage Artifact
+        uses: actions/upload-artifact@v5
+        with:
+          name: sonarqube-coverage-xml
+          path: sonarqube-generic-coverage.xml
+          retention-days: 7  # Optional: Set retention for a short period (default is 90 days)
