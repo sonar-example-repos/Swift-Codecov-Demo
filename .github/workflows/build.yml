@@ -15,23 +15,23 @@ jobs:
             fetch-depth: 0
       - uses: ruby/setup-ruby@v1
         with:
+          # Do not use 3.4, won't work due to kconv library not included
           ruby-version: '3.2' # Not needed with a .ruby-version, .tool-versions or mise.toml
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       - name: Build and test, collect coverage
         run: xcodebuild clean build test -project CodecovDemo.xcodeproj -scheme CodecovDemo -destination 'name=iPhone 17' -enableCodeCoverage YES
       - name: Convert xcresult coverage to SonarQube coverage format
-        run:  bundle exec slather coverage --sonarqube-xml --scheme CodecovDemo ./CodecovDemo.xcodeproj   
+        run:  bundle exec slather coverage --sonarqube-xml --scheme CodecovDemo ./CodecovDemo.xcodeproj
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v7
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.swift.coverage.reportPaths=sonarqube-generic-coverage.xml
             -X
-      - name: ⬆️ Upload SonarQube Coverage Artifact
-        uses: actions/upload-artifact@v5
-        with:
-          name: sonarqube-coverage-xml
-          path: sonarqube-generic-coverage.xml
-          retention-days: 7  # Optional: Set retention for a short period (default is 90 days)
+      # - name: Upload SonarQube Coverage Artifact
+      #   uses: actions/upload-artifact@v5
+      #   with:
+      #     name: sonarqube-coverage-xml
+      #     path: sonarqube-generic-coverage.xml
+      #     retention-days: 7  # Optional: Set retention for a short period (default is 90 days)
