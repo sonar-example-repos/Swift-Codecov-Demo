@@ -1,0 +1,35 @@
+{
+  "configurations" : [
+    {
+      "id" : "786B761A-1D3A-4963-9660-06F042518CE7",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:CodecovDemo.xcodeproj",
+      "identifier" : "A6091FEE25D5BFC100E905B9",
+      "name" : "CodecovDemo"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:CodecovDemo.xcodeproj",
+        "identifier" : "A609200425D5BFC500E905B9",
+        "name" : "CodecovDemoTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:CodecovDemo.xcodeproj",
+        "identifier" : "A609200F25D5BFC500E905B9",
+        "name" : "CodecovDemoUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
