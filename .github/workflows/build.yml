@@ -20,7 +20,7 @@ jobs:
       - name: Build and test, collect coverage
         run: xcodebuild clean build test -project CodecovDemo.xcodeproj -scheme CodecovDemo -destination 'name=iPhone 17' -enableCodeCoverage YES
       - name: Convert xcresult coverage to SonarQube coverage format
-        run:  slather coverage --sonarqube-xml --scheme CodecovDemo ./CodecovDemo.xcodeproj   
+        run:  bundle exec slather coverage --sonarqube-xml --scheme CodecovDemo ./CodecovDemo.xcodeproj   
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v7
         env:
