@@ -50,6 +50,7 @@
 		A609201425D5BFC500E905B9 /* CodecovDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodecovDemoUITests.swift; sourceTree = "<group>"; };
 		A609201625D5BFC500E905B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A609202825D5C04200E905B9 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		ADC815922EC24DDF00F7F6FA /* CodecovDemo.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CodecovDemo.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +81,7 @@
 		A6091FE625D5BFC100E905B9 = {
 			isa = PBXGroup;
 			children = (
+				ADC815922EC24DDF00F7F6FA /* CodecovDemo.xctestplan */,
 				A6091FF125D5BFC100E905B9 /* CodecovDemo */,
 				A609200825D5BFC500E905B9 /* CodecovDemoTests */,
 				A609201325D5BFC500E905B9 /* CodecovDemoUITests */,
@@ -439,7 +441,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H65ZHJ69J6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CodecovDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -458,7 +460,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H65ZHJ69J6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CodecovDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -477,7 +479,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H65ZHJ69J6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CodecovDemoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -499,7 +501,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H65ZHJ69J6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CodecovDemoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -520,7 +522,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H65ZHJ69J6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CodecovDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -540,7 +542,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H65ZHJ69J6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CodecovDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
