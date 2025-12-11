@@ -21,23 +21,30 @@ jobs:
           ruby-version: '3.2' # Not needed with a .ruby-version, .tool-versions or mise.toml
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           
-      - name: 🛠️ Create and Prepare Simulator Device
+      - name: Create and Prepare Simulator Device
         id: create_simulator
         run: |
           # 1. Define the desired device name and type
           DEVICE_NAME="CodecovTestSimulator"
-          DEVICE_TYPE="iPhone 15 Pro" # A reliable device type
+          # Simctl expects device types to use dashes, not spaces (e.g., iPhone-15-Pro)
+          DEVICE_TYPE="iPhone-15-Pro" 
 
-          # 2. Get the latest available iOS Simulator Runtime ID (e.g., com.apple.CoreSimulator.SimRuntime.iOS-18-0)
-          # This ensures we use a runtime that is guaranteed to be available on the runner.
-          RUNTIME_ID=$(xcrun simctl list runtimes | grep -m 1 -E 'iOS|visionOS' | awk -F '[()]' '{print $2}')
+          # 2. Get the full, specific iOS Simulator Runtime ID 
+          # This command specifically extracts the UUID needed for creation, NOT the version number.
+          # It finds the latest non-deprecated iOS runtime.
+          RUNTIME_ID=$(xcrun simctl list runtimes | grep -m 1 'iOS' | grep -v 'unavailable' | grep -v 'deprecated' | awk -F '[()]' '{print $2}')
           
+          if [ -z "$RUNTIME_ID" ]; then
+            echo "Error: Could not find a valid iOS Simulator Runtime ID."
+            exit 1
+          fi
+
           echo "Found Runtime ID: $RUNTIME_ID"
           
-          # 3. Delete the device if it exists (for safety in edge cases)
+          # 3. Delete the device if it exists (for safety)
           xcrun simctl delete "$DEVICE_NAME" 2>/dev/null
           
-          # 4. Create the new simulator instance
+          # 4. Create the new simulator instance using the full ID
           DEVICE_ID=$(xcrun simctl create "$DEVICE_NAME" "$DEVICE_TYPE" "$RUNTIME_ID")
           
           echo "Created Simulator ID: $DEVICE_ID"
