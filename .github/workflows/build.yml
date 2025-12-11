@@ -19,7 +19,7 @@ jobs:
           ruby-version: '3.2' # Not needed with a .ruby-version, .tool-versions or mise.toml
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       - name: Build and test, collect coverage
-        run: xcodebuild clean build test -project CodecovDemo.xcodeproj -scheme CodecovDemo -destination 'name=Any iOS Device' -enableCodeCoverage YES
+        run: xcodebuild clean build test -project CodecovDemo.xcodeproj -scheme CodecovDemo -destination 'platform=iOS Simulator,name=Any iOS Simulator Device' -enableCodeCoverage YES
       - name: Convert xcresult coverage to SonarQube coverage format
         run:  bundle exec slather coverage --sonarqube-xml --scheme CodecovDemo ./CodecovDemo.xcodeproj
       - name: SonarQube Scan

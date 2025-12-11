@@ -16,6 +16,8 @@
 		A609201525D5BFC500E905B9 /* CodecovDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609201425D5BFC500E905B9 /* CodecovDemoUITests.swift */; };
 		A609202925D5C04200E905B9 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609202825D5C04200E905B9 /* Person.swift */; };
 		A609202A25D5C04200E905B9 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609202825D5C04200E905B9 /* Person.swift */; };
+		A609202B25D5C04300E905B9 /* BadCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609202C25D5C04300E905B9 /* BadCode.swift */; };
+		A609202D25D5C04300E905B9 /* BadCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609202C25D5C04300E905B9 /* BadCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,7 @@
 		A609201425D5BFC500E905B9 /* CodecovDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodecovDemoUITests.swift; sourceTree = "<group>"; };
 		A609201625D5BFC500E905B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A609202825D5C04200E905B9 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		A609202C25D5C04300E905B9 /* BadCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadCode.swift; sourceTree = "<group>"; };
 		ADC815922EC24DDF00F7F6FA /* CodecovDemo.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CodecovDemo.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +112,7 @@
 				A6091FFD25D5BFC500E905B9 /* LaunchScreen.storyboard */,
 				A609200025D5BFC500E905B9 /* Info.plist */,
 				A609202825D5C04200E905B9 /* Person.swift */,
+				A609202C25D5C04300E905B9 /* BadCode.swift */,
 			);
 			path = CodecovDemo;
 			sourceTree = "<group>";
@@ -263,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A609202925D5C04200E905B9 /* Person.swift in Sources */,
+				A609202B25D5C04300E905B9 /* BadCode.swift in Sources */,
 				A6091FF725D5BFC100E905B9 /* ViewController.swift in Sources */,
 				A6091FF325D5BFC100E905B9 /* AppDelegate.swift in Sources */,
 			);
@@ -273,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A609202A25D5C04200E905B9 /* Person.swift in Sources */,
+				A609202D25D5C04300E905B9 /* BadCode.swift in Sources */,
 				A609200A25D5BFC500E905B9 /* CodecovDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
