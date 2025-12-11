@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 // VULNERABILITY: Hardcoded credentials
-let API_KEY = "sk_live_51234567890abcdefghijklmnop"gi
+let API_KEY = "sk_live_51234567890abcdefghijklmnop"
 let PASSWORD = "admin123"
 let SECRET_TOKEN = "my-super-secret-token"
 
