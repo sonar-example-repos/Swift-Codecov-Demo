@@ -8,57 +8,20 @@ on:
 jobs:
   sonarqube:
     name: SonarQube
-    # We will use the latest macos runner, which currently has Xcode 15.x/iOS 17.x or Xcode 16.x/iOS 18/26.x
-    runs-on: macos-latest 
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v6
         with:
             fetch-depth: 0
-            
       - uses: ruby/setup-ruby@v1
         with:
           # Do not use 3.4, won't work due to kconv library not included
           ruby-version: '3.2' # Not needed with a .ruby-version, .tool-versions or mise.toml
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          
-      - name: Create and Prepare Simulator Device
-        id: create_simulator
-        run: |
-          # 1. Define the desired device name and type
-          DEVICE_NAME="CodecovTestSimulator"
-          # Simctl expects device types to use dashes, not spaces (e.g., iPhone-15-Pro)
-          DEVICE_TYPE="iPhone-15-Pro" 
-
-          # 2. Get the full, specific iOS Simulator Runtime ID 
-          # This command specifically extracts the UUID needed for creation, NOT the version number.
-          # It finds the latest non-deprecated iOS runtime.
-          RUNTIME_ID=$(xcrun simctl list runtimes | grep -m 1 'iOS' | grep -v 'unavailable' | grep -v 'deprecated' | awk -F '[()]' '{print $2}')
-          
-          if [ -z "$RUNTIME_ID" ]; then
-            echo "Error: Could not find a valid iOS Simulator Runtime ID."
-            exit 1
-          fi
-
-          echo "Found Runtime ID: $RUNTIME_ID"
-          
-          # 3. Delete the device if it exists (for safety)
-          xcrun simctl delete "$DEVICE_NAME" 2>/dev/null
-          
-          # 4. Create the new simulator instance using the full ID
-          DEVICE_ID=$(xcrun simctl create "$DEVICE_NAME" "$DEVICE_TYPE" "$RUNTIME_ID")
-          
-          echo "Created Simulator ID: $DEVICE_ID"
-          
-          # 5. Export the name to be used in the xcodebuild command
-          echo "DEVICE_NAME=$DEVICE_NAME" >> $GITHUB_ENV
-
-      - name: 🏗️ Build and test, collect coverage
-        # Now we use the environment variable $DEVICE_NAME to target the device we just created.
-        run: xcodebuild clean build test -project CodecovDemo.xcodeproj -scheme CodecovDemo -destination "platform=iOS Simulator,name=${{ env.DEVICE_NAME }}" -enableCodeCoverage YES
-      
+      - name: Build and test, collect coverage
+        run: xcodebuild clean build test -project CodecovDemo.xcodeproj -scheme CodecovDemo -destination 'iPhone 15' -enableCodeCoverage YES
       - name: Convert xcresult coverage to SonarQube coverage format
         run:  bundle exec slather coverage --sonarqube-xml --scheme CodecovDemo ./CodecovDemo.xcodeproj
-        
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v7
         env:
@@ -66,7 +29,6 @@ jobs:
         with:
           args: >
             -X
-
       # - name: Upload SonarQube Coverage Artifact
       #   uses: actions/upload-artifact@v5
       #   with:
