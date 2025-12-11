@@ -15,9 +15,7 @@
 		A609200A25D5BFC500E905B9 /* CodecovDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609200925D5BFC500E905B9 /* CodecovDemoTests.swift */; };
 		A609201525D5BFC500E905B9 /* CodecovDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609201425D5BFC500E905B9 /* CodecovDemoUITests.swift */; };
 		A609202925D5C04200E905B9 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609202825D5C04200E905B9 /* Person.swift */; };
-		A609202A25D5C04200E905B9 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609202825D5C04200E905B9 /* Person.swift */; };
 		A609202B25D5C04300E905B9 /* BadCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609202C25D5C04300E905B9 /* BadCode.swift */; };
-		A609202D25D5C04300E905B9 /* BadCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609202C25D5C04300E905B9 /* BadCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -277,8 +275,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A609202A25D5C04200E905B9 /* Person.swift in Sources */,
-				A609202D25D5C04300E905B9 /* BadCode.swift in Sources */,
 				A609200A25D5BFC500E905B9 /* CodecovDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
